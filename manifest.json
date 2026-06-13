@@ -1,0 +1,21 @@
+{
+  "short_name": "EDDP ULP",
+  "name": "Executive Daily Distribution Performance ULP",
+  "icons": [
+    {
+      "src": "https://img.icons8.com/color/192/electricity.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://img.icons8.com/color/512/electricity.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0B0F19",
+  "theme_color": "#0B0F19",
+  "display": "standalone",
+  "orientation": "portrait"
+}
