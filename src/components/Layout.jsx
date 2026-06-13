@@ -89,70 +89,65 @@ export default function Layout({ children, activeTab, setActiveTab }) {
       <div
         className={`min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200 text-slate-800 dark:from-slate-950 dark:via-[#0B0F19] dark:to-slate-900 dark:text-slate-100`}
       >
-        <Card
-          variant="glass"
-          className="w-full max-w-sm p-8 rounded-3xl border border-slate-200/80 dark:border-slate-800/80 shadow-2xl relative overflow-hidden bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl"
-        >
+        <div className="w-full max-w-sm flex flex-col gap-6 relative">
           {/* Background Ambient Glow */}
           <div className="absolute -top-10 -right-10 w-32 h-32 bg-sky-500/10 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl"></div>
 
-          <CardBody className="flex flex-col gap-6 p-0">
-            {/* Header / Logo */}
-            <div className="flex flex-col items-center text-center gap-1.5">
-              <div className="h-16 w-16 rounded-full bg-gradient-to-tr from-sky-500 to-amber-550 p-0.5 shadow-lg shadow-sky-500/15 animate-pulse-soft flex items-center justify-center">
-                <div className="h-full w-full rounded-full bg-white dark:bg-slate-950 flex items-center justify-center">
-                  <Zap className="h-7 w-7 text-sky-500 dark:text-sky-400" />
-                </div>
+          {/* Header / Logo */}
+          <div className="flex flex-col items-center text-center gap-1.5">
+            <div className="h-16 w-16 rounded-full bg-gradient-to-tr from-sky-500 to-amber-550 p-0.5 shadow-lg shadow-sky-500/15 animate-pulse-soft flex items-center justify-center">
+              <div className="h-full w-full rounded-full bg-white dark:bg-slate-950 flex items-center justify-center">
+                <Zap className="h-7 w-7 text-sky-500 dark:text-sky-400" />
               </div>
-              <h1 className="text-2xl font-black tracking-tight text-slate-800 dark:text-white mt-3">
-                Laporan EDDP
-              </h1>
-              <p className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 max-w-[280px] leading-tight">
-                Executive Daily Distribution Performance
-              </p>
-              <p className="text-[10px] font-black text-sky-500 dark:text-sky-400 tracking-widest uppercase mt-0.5">
-                UP3 Salatiga
-              </p>
             </div>
+            <h1 className="text-2xl font-black tracking-tight text-slate-800 dark:text-white mt-3">
+              Laporan EDDP
+            </h1>
+            <p className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 max-w-[280px] leading-tight">
+              Executive Daily Distribution Performance
+            </p>
+            <p className="text-[10px] font-black text-sky-500 dark:text-sky-400 tracking-widest uppercase mt-0.5">
+              UP3 Salatiga
+            </p>
+          </div>
 
-            {/* Login Form */}
-            <form onSubmit={handleLoginSubmit} className="flex flex-col gap-4.5">
-              <Input
-                label="Nama / Username"
-                name="name"
-                type="text"
-                placeholder="Masukkan nama/username..."
-                value={nameInput}
-                onChange={(e) => setNameInput(e.target.value)}
-                icon={User}
-                required
-              />
-              <Input
-                label="Password / PIN"
-                name="pin"
-                type="text"
-                inputMode="numeric"
-                pattern="[0-9]*"
-                placeholder="Masukkan password/PIN..."
-                value={pin}
-                onChange={(e) => setPin(e.target.value.replace(/[^0-9]/g, ""))}
-                icon={Lock}
-                required
-              />
+          {/* Login Form */}
+          <form onSubmit={handleLoginSubmit} className="flex flex-col gap-4.5">
+            <Input
+              label="Nama / Username"
+              name="name"
+              type="text"
+              placeholder="Masukkan nama/username..."
+              value={nameInput}
+              onChange={(e) => setNameInput(e.target.value)}
+              icon={User}
+              required
+            />
+            <Input
+              label="Password / PIN"
+              name="pin"
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              placeholder="Masukkan password/PIN..."
+              value={pin}
+              onChange={(e) => setPin(e.target.value.replace(/[^0-9]/g, ""))}
+              icon={Lock}
+              required
+            />
 
-              <Button
-                type="submit"
-                variant="primary"
-                className="w-full py-3.5 mt-3 font-semibold text-xs tracking-wide uppercase"
-                disabled={pin.length < 4 || isLoading}
-                isLoading={isLoading}
-              >
-                Masuk ke Aplikasi
-              </Button>
-            </form>
-          </CardBody>
-        </Card>
+            <Button
+              type="submit"
+              variant="primary"
+              className="w-full py-3.5 mt-3 font-semibold text-xs tracking-wide uppercase"
+              disabled={pin.length < 4 || isLoading}
+              isLoading={isLoading}
+            >
+              Masuk ke Aplikasi
+            </Button>
+          </form>
+        </div>
 
         {/* Toast Notification System on Login Page */}
         {syncStatus.show && (
