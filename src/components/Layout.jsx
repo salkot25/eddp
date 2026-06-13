@@ -91,7 +91,7 @@ export default function Layout({ children, activeTab, setActiveTab }) {
       >
         <Card
           variant="glass"
-          className="w-full max-w-md p-6 border-slate-200/80 dark:border-slate-800/80 shadow-2xl relative overflow-hidden"
+          className="w-full max-w-sm p-8 rounded-3xl border border-slate-200/80 dark:border-slate-800/80 shadow-2xl relative overflow-hidden bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl"
         >
           {/* Background Ambient Glow */}
           <div className="absolute -top-10 -right-10 w-32 h-32 bg-sky-500/10 rounded-full blur-3xl"></div>
@@ -99,22 +99,22 @@ export default function Layout({ children, activeTab, setActiveTab }) {
 
           <CardBody className="flex flex-col gap-6 p-0">
             {/* Header / Logo */}
-            <div className="flex flex-col items-center text-center gap-2">
-              <div className="h-16 w-16 rounded-2xl bg-gradient-to-tr from-sky-500 to-amber-500 p-0.5 shadow-lg shadow-sky-500/10 animate-pulse-soft">
-                <div className="h-full w-full rounded-2xl bg-white dark:bg-slate-950 flex items-center justify-center">
-                  <Zap className="h-8 w-8 text-sky-400" />
+            <div className="flex flex-col items-center text-center gap-1.5">
+              <div className="h-16 w-16 rounded-full bg-gradient-to-tr from-sky-500 to-amber-550 p-0.5 shadow-lg shadow-sky-500/15 animate-pulse-soft flex items-center justify-center">
+                <div className="h-full w-full rounded-full bg-white dark:bg-slate-950 flex items-center justify-center">
+                  <Zap className="h-7 w-7 text-sky-500 dark:text-sky-400" />
                 </div>
               </div>
-              <h1 className="text-xl font-bold tracking-tight text-slate-855 dark:text-white mt-2">
-                EDDP ENTERPRISE
+              <h1 className="text-2xl font-black tracking-tight text-slate-800 dark:text-white mt-3 uppercase">
+                EDDP PWA
               </h1>
-              <p className="text-xs text-slate-500 dark:text-slate-400 max-w-[280px]">
-                Executive Daily Distribution Performance PLN Salatiga Kota
+              <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 tracking-widest uppercase">
+                PLN Salatiga Kota
               </p>
             </div>
 
             {/* Login Form */}
-            <form onSubmit={handleLoginSubmit} className="flex flex-col gap-4">
+            <form onSubmit={handleLoginSubmit} className="flex flex-col gap-4.5">
               <Input
                 label="Nama / Username"
                 name="name"
@@ -141,20 +141,13 @@ export default function Layout({ children, activeTab, setActiveTab }) {
               <Button
                 type="submit"
                 variant="primary"
-                className="w-full py-3 mt-2 font-semibold"
+                className="w-full py-3.5 mt-3 font-semibold text-xs tracking-wide uppercase"
                 disabled={pin.length < 4 || isLoading}
                 isLoading={isLoading}
               >
                 Masuk ke Aplikasi
               </Button>
             </form>
-
-            <div className="text-center">
-              <p className="text-[10px] text-slate-450 dark:text-slate-500">
-                PWA ini dilindungi PIN keamanan ULP. Silakan tanyakan
-                administrator untuk akses.
-              </p>
-            </div>
           </CardBody>
         </Card>
 
