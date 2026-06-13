@@ -414,7 +414,7 @@ export default function FormatPreview() {
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-white text-[13px] font-bold truncate leading-tight">
-                MUP3 Salatiga · Asman TEL
+                Laporan WhatsApp
               </p>
               <p className="text-emerald-300/70 text-[10px] font-semibold leading-tight mt-0.5">
                 EDDP · {activeUlp.replace("ULP ", "")} ·{" "}

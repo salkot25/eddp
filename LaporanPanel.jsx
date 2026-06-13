@@ -835,7 +835,7 @@ Terima kasih`;
             <div className="bg-[#075E54] px-4 py-3 flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white text-[8px] sm:text-xs font-black shrink-0 border border-white/20">MUP</div>
               <div className="flex-1 min-w-0">
-                <div className="text-white text-xs font-semibold truncate">MUP3 Salatiga · Asman TEL</div>
+                <div className="text-white text-xs font-semibold truncate">Laporan WhatsApp</div>
                 <div className="text-green-200 text-[8px] sm:text-xs font-bold">P2TL ULP Salatiga Kota</div>
               </div>
               <div className="text-[8px] sm:text-xs text-green-200/60 font-bold hidden sm:block">{new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })}</div>

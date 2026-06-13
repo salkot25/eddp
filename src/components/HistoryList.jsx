@@ -83,14 +83,17 @@ export default function HistoryList() {
         </div>
         
         {apiUrl && (
-          <button
+          <Button
+            variant="secondary"
             onClick={() => fetchData(true)}
-            disabled={isLoading || !isOnline}
-            className="p-2.5 text-slate-500 hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-400 disabled:opacity-40 cursor-pointer transition-all duration-200 active:scale-90 flex items-center justify-center shrink-0"
+            isLoading={isLoading}
+            disabled={!isOnline}
+            icon={RefreshCw}
+            className="p-3 bg-slate-100 border border-slate-200 rounded-xl dark:bg-slate-900 dark:border-slate-800"
             title="Refresh Riwayat dari Server"
           >
-            <RefreshCw size={18} className={isLoading ? "animate-spin text-sky-500" : ""} />
-          </button>
+            <span className="hidden sm:inline">Sinkron</span>
+          </Button>
         )}
       </div>
 
