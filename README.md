@@ -26,7 +26,7 @@ Kontrol di sudut kanan atas dirancang tanpa bingkai/latar belakang kotak (*borde
    - **Animasi Dark Mode**: Ikon bulan berwarna biru langit melayang dan bergoyang lembut secara kontinu (`animate-float-slow`).
 3. **Logout**: Ikon keluar (`LogOut`) minimalis untuk kembali ke halaman PIN.
 
-### D. Preview WhatsApp & Format Tanggal H-1
+### D. Kirim Laporan & Format Tanggal H-1
 * **Tanggal H-1**: Karena realisasi laporan adalah kinerja hari kemarin yang dilaporkan hari ini, teks laporan WhatsApp secara otomatis ter-generate dengan tanggal **H-1** dari tanggal pelaporan yang dipilih di form.
 * **Kustomisasi Teks**: Teks pratinjau dalam chat bubble WhatsApp dapat diedit secara manual sebelum disalin ke clipboard atau dibagikan langsung ke WhatsApp grup koordinasi.
 
@@ -94,7 +94,7 @@ eddp/
    npm run dev
    ```
 4. Buka URL localhost di browser Anda (misalnya `http://localhost:3000/`).
-5. Pergi ke tab **Pengaturan** di kanan bawah aplikasi, tempelkan **Web App URL** yang Anda salin dari Google Apps Script, lalu klik **Simpan Pengaturan**.
+5. Tempelkan **Web App URL** yang Anda salin dari Google Apps Script ke dalam file `.env` pada variabel `VITE_API_URL` untuk mengaktifkan konektivitas database online.
 
 ---
 

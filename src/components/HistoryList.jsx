@@ -105,7 +105,7 @@ export default function HistoryList() {
               <Clock className="h-10 w-10 text-slate-400 dark:text-slate-600 mx-auto" />
               <p className="text-slate-500 dark:text-slate-400 font-medium">Belum ada riwayat laporan</p>
               <p className="text-xs text-slate-400 dark:text-slate-500">
-                Silakan buat laporan baru di tab "Buat Laporan".
+                Silakan isi laporan baru di tab "Isi Laporan".
               </p>
             </CardBody>
           </Card>
