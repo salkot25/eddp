@@ -137,13 +137,33 @@ export function AppProvider({ children }) {
       return false;
     }
 
-    // Jika URL API kosong, beri tahu pengguna dengan jelas
+    // Jika URL API kosong, lakukan validasi PIN secara lokal (offline fallback) agar user bisa masuk ke aplikasi untuk mengonfigurasi API URL.
     if (!apiUrl) {
-      showToast(
-        "Gagal masuk. URL Web App Google Apps Script belum dikonfigurasi di Pengaturan!",
-        "error",
-      );
-      return false;
+      if (passwordInput === "52351") {
+        setIsAuthenticated(true);
+        setUsername(usernameInput);
+
+        // Pilih ULP otomatis berdasarkan username
+        const nameLower = usernameInput.toLowerCase();
+        let targetUlp = LIST_ULP[0]; // default fallback
+        if (nameLower.includes("salatiga")) {
+          targetUlp = "ULP Salatiga Kota";
+        } else if (nameLower.includes("ambarawa")) {
+          targetUlp = "ULP Ambarawa";
+        } else if (nameLower.includes("ungaran")) {
+          targetUlp = "ULP Ungaran";
+        }
+        setActiveUlp(targetUlp);
+
+        showToast(`Mode Offline: Selamat datang, ${usernameInput}! Silakan konfigurasikan URL API di Pengaturan.`, "warning");
+        return true;
+      } else {
+        showToast(
+          "Gagal masuk. PIN tidak valid atau URL Web App belum dikonfigurasi di Pengaturan!",
+          "error",
+        );
+        return false;
+      }
     }
 
     // Kita tidak memblokir menggunakan !isOnline karena navigator.onLine bisa tidak akurat.
@@ -160,6 +180,7 @@ export function AppProvider({ children }) {
           action: "login",
           username: usernameInput,
           password: passwordInput,
+          clientTime: new Date().toISOString(),
         }),
       });
       const result = await response.json();
@@ -187,6 +208,27 @@ export function AppProvider({ children }) {
       }
     } catch (err) {
       console.error("Gagal melakukan login online:", err);
+      
+      // Fallback ke login offline jika PIN valid
+      if (passwordInput === "52351") {
+        setIsAuthenticated(true);
+        setUsername(usernameInput);
+
+        const nameLower = usernameInput.toLowerCase();
+        let targetUlp = LIST_ULP[0];
+        if (nameLower.includes("salatiga")) {
+          targetUlp = "ULP Salatiga Kota";
+        } else if (nameLower.includes("ambarawa")) {
+          targetUlp = "ULP Ambarawa";
+        } else if (nameLower.includes("ungaran")) {
+          targetUlp = "ULP Ungaran";
+        }
+        setActiveUlp(targetUlp);
+
+        showToast(`Masuk Mode Offline: Selamat datang, ${usernameInput}!`, "warning");
+        return true;
+      }
+
       showToast(
         "Gagal menyambungkan ke server login. Silakan periksa jaringan internet Anda.",
         "error",
