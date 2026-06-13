@@ -161,7 +161,7 @@ export default function Layout({ children, activeTab, setActiveTab }) {
         {/* Toast Notification System on Login Page */}
         {syncStatus.show && (
           <div
-            className="fixed top-4 left-1/2 -translate-x-1/2 z-50 animate-bounce flex items-center gap-2.5 px-4 py-3 rounded-xl shadow-2xl border text-xs font-semibold max-w-sm w-11/12 md:w-auto
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 animate-bounce flex items-center gap-2.5 px-4 py-3 rounded-xl shadow-2xl border text-xs font-semibold max-w-sm w-11/12 md:w-auto
             bg-white border-slate-200 text-slate-800 dark:bg-slate-900 dark:border-slate-800/80 dark:text-slate-100"
           >
             {syncStatus.type === "success" && (
@@ -346,7 +346,7 @@ export default function Layout({ children, activeTab, setActiveTab }) {
       {/* Toast Notification System on Authenticated Page */}
       {syncStatus.show && (
         <div
-          className="fixed top-4 left-1/2 -translate-x-1/2 z-50 animate-bounce flex items-center gap-2.5 px-4 py-3 rounded-xl shadow-2xl border text-xs font-semibold max-w-sm w-11/12 md:w-auto
+          className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 animate-bounce flex items-center gap-2.5 px-4 py-3 rounded-xl shadow-2xl border text-xs font-semibold max-w-sm w-11/12 md:w-auto
           bg-white border-slate-200 text-slate-800 dark:bg-slate-900 dark:border-slate-800/80 dark:text-slate-100"
         >
           {syncStatus.type === "success" && (
