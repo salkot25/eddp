@@ -105,11 +105,14 @@ export default function Layout({ children, activeTab, setActiveTab }) {
                   <Zap className="h-7 w-7 text-sky-500 dark:text-sky-400" />
                 </div>
               </div>
-              <h1 className="text-2xl font-black tracking-tight text-slate-800 dark:text-white mt-3 uppercase">
-                EDDP PWA
+              <h1 className="text-2xl font-black tracking-tight text-slate-800 dark:text-white mt-3">
+                Laporan EDDP
               </h1>
-              <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 tracking-widest uppercase">
-                PLN Salatiga Kota
+              <p className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 max-w-[280px] leading-tight">
+                Executive Daily Distribution Performance
+              </p>
+              <p className="text-[10px] font-black text-sky-500 dark:text-sky-400 tracking-widest uppercase mt-0.5">
+                UP3 Salatiga
               </p>
             </div>
 
