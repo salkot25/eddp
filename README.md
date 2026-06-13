@@ -103,3 +103,25 @@ eddp/
 ## 4. Kredensial Pengujian Default
 * **Nama**: *Bebas* (misalnya: `Petugas`)
 * **PIN**: `52351`
+
+---
+
+## 5. Deployment ke GitHub Pages & Custom Domain
+Aplikasi ini telah dikonfigurasi untuk dideploy ke **GitHub Pages** menggunakan **GitHub Actions** dengan domain kustom **`eddp.salkot.online`**.
+
+### Langkah Setup Domain Kustom (DNS):
+Untuk mengarahkan domain kustom `eddp.salkot.online` ke GitHub Pages, tambahkan record DNS berikut pada panel registrar domain Anda (seperti Cloudflare, Niagahoster, Rumahweb, dll):
+* **Tipe**: `CNAME`
+* **Nama (Host)**: `eddp`
+* **Tujuan (Value/Target)**: `salkot25.github.io`
+* **TTL**: `Automatic` atau `3600`
+
+### Alur Kerja Deployment Otomatis:
+1. Ketika Anda melakukan push kode ke branch `main` (`git push origin main`), GitHub Actions akan otomatis memicu workflow `.github/workflows/deploy.yml` untuk melakukan kompilasi build produksi dan mempublikasikannya ke branch `gh-pages`.
+2. Di halaman repositori GitHub Anda:
+   - Masuk ke menu **Settings** > **Pages**.
+   - Pastikan bagian **Build and deployment** -> **Source** diatur ke `Deploy from a branch`.
+   - Pilih branch **`gh-pages`** (folder `/ (root)`) dan klik **Save**.
+   - Pada kolom **Custom domain**, masukkan `eddp.salkot.online` jika belum terisi otomatis (didukung dari file [CNAME](file:///d:/Antigravity/eddp/public/CNAME)).
+   - Setelah beberapa saat (biasanya 5-10 menit untuk propagasi DNS), Anda dapat mencentang **Enforce HTTPS** untuk mengamankan koneksi SSL.
+
