@@ -11,9 +11,11 @@ Aplikasi Web Progresif (PWA) tingkat enterprise untuk mengelola, memformat, dan 
 * **Penyimpanan Sel Kosong (Presisi)**: Parameter yang dikosongkan akan disimpan ke Google Sheets sebagai sel kosong (bukan angka `0`). Saat dimuat kembali ke form, data kosong ini akan ditampilkan sebagai tanda `-`.
 * **Nilai Nol Asli (`0`)**: Jika realisasi diisi angka `0` secara sengaja, maka nilai tersebut disimpan dan ditampilkan sebagai `0` (bukan sebagai data kosong).
 
-### B. Otentikasi PIN Keamanan
+### B. Otentikasi PIN Keamanan & Redesain Login Premium
 * **Login Khusus Angka**: Form login PIN dirancang agar memicu papan ketik numerik (`inputMode="numeric"`) di HP dan secara real-time menyaring input sehingga **hanya karakter angka saja** yang dapat diketik.
 * **PIN Akses**: Aplikasi dapat diakses dengan nama petugas bebas dan PIN keamanan: **`52351`**.
+* **Tipografi & Header Premium**: Judul aplikasi `"Laporan EDDP"` menggunakan gradasi warna dinamis (*gradient text*) dari Biru Sky ke Indigo, serta deskripsi `"Executive Daily Distribution Performance"` menggunakan format huruf kapital dengan spasi lebar (*uppercase tracking-widest*) dan badge `"UP3 Salatiga"` bergaris tepi minimalis.
+* **Desain Tanpa Bingkai (Frameless)**: Seluruh pembungkus kartu login dibuang untuk menghadirkan kesan modern yang menyatu dengan latar belakang disertai ambient glow lembut di belakang konten.
 
 ### C. Navigasi & Tampilan Atas Minimalis (Borderless Icons)
 Kontrol di sudut kanan atas dirancang tanpa bingkai/latar belakang kotak (*borderless*), menyatu secara elegan dengan spasi rapat (`gap-1`):

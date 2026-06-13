@@ -23,8 +23,8 @@ export function Input({
   return (
     <div className={`flex flex-col gap-1.5 w-full ${className}`}>
       {label && (
-        <label htmlFor={name} className="text-xs font-semibold tracking-wide text-slate-500 dark:text-slate-400 select-none uppercase">
-          {label} {required && <span className="text-rose-500">*</span>}
+        <label htmlFor={name} className="text-[10px] font-bold tracking-widest text-slate-450 dark:text-slate-500 select-none uppercase">
+          {label} {required && <span className="text-rose-500/90">*</span>}
         </label>
       )}
       

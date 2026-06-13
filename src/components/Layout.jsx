@@ -95,21 +95,23 @@ export default function Layout({ children, activeTab, setActiveTab }) {
           <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl"></div>
 
           {/* Header / Logo */}
-          <div className="flex flex-col items-center text-center gap-1.5">
+          <div className="flex flex-col items-center text-center gap-2">
             <div className="h-16 w-16 rounded-full bg-gradient-to-tr from-sky-500 to-amber-550 p-0.5 shadow-lg shadow-sky-500/15 animate-pulse-soft flex items-center justify-center">
               <div className="h-full w-full rounded-full bg-white dark:bg-slate-950 flex items-center justify-center">
                 <Zap className="h-7 w-7 text-sky-500 dark:text-sky-400" />
               </div>
             </div>
-            <h1 className="text-2xl font-black tracking-tight text-slate-800 dark:text-white mt-3">
+            <h1 className="text-[30px] md:text-[34px] font-black tracking-tight mt-3 bg-gradient-to-r from-sky-600 via-sky-500 to-indigo-600 dark:from-sky-400 dark:via-sky-350 dark:to-indigo-300 bg-clip-text text-transparent">
               Laporan EDDP
             </h1>
-            <p className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 max-w-[280px] leading-tight">
+            <p className="text-[10px] font-bold tracking-widest text-slate-400 dark:text-slate-500 max-w-[285px] leading-relaxed uppercase">
               Executive Daily Distribution Performance
             </p>
-            <p className="text-[10px] font-black text-sky-500 dark:text-sky-400 tracking-widest uppercase mt-0.5">
-              UP3 Salatiga
-            </p>
+            <div className="mt-1">
+              <span className="inline-flex items-center px-3.5 py-0.5 rounded-full text-[9px] font-extrabold uppercase tracking-widest bg-slate-100 dark:bg-slate-900/60 text-slate-600 dark:text-slate-400 border border-slate-200/85 dark:border-slate-800/80 select-none">
+                UP3 Salatiga
+              </span>
+            </div>
           </div>
 
           {/* Login Form */}
@@ -140,7 +142,7 @@ export default function Layout({ children, activeTab, setActiveTab }) {
             <Button
               type="submit"
               variant="primary"
-              className="w-full py-3.5 mt-3 font-semibold text-xs tracking-wide uppercase"
+              className="w-full py-3.5 mt-3 font-bold text-xs tracking-widest uppercase"
               disabled={pin.length < 4 || isLoading}
               isLoading={isLoading}
             >
