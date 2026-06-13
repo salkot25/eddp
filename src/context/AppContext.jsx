@@ -10,13 +10,14 @@ export function AppProvider({ children }) {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [apiUrl, setApiUrl] = useLocalStorage(
     "eddp_api_url",
-    import.meta.env.VITE_API_URL || "",
+    import.meta.env.VITE_API_URL || "https://script.google.com/macros/s/AKfycbwFjsgCjefEjHkuj5kMZaiivYEnNRtatgqTkp5HvC3scvKnqrwTvenq5fYjQx3-bY8j-A/exec",
   ); // URL Web App Google Apps Script
 
-  // Sinkronisasi otomatis jika di localStorage bernilai kosong namun di .env ada nilainya
+  // Sinkronisasi otomatis jika di localStorage bernilai kosong
   useEffect(() => {
-    if (!apiUrl && import.meta.env.VITE_API_URL) {
-      setApiUrl(import.meta.env.VITE_API_URL);
+    const defaultUrl = import.meta.env.VITE_API_URL || "https://script.google.com/macros/s/AKfycbwFjsgCjefEjHkuj5kMZaiivYEnNRtatgqTkp5HvC3scvKnqrwTvenq5fYjQx3-bY8j-A/exec";
+    if (!apiUrl || apiUrl === "") {
+      setApiUrl(defaultUrl);
     }
   }, [apiUrl, setApiUrl]);
 
